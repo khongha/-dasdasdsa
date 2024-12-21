@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-box {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2em;
+    color: #ff6666;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #ff6666;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
+/* Khung popup */
+.popup {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: white;
+    color: #ff6666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fall 5s linear infinite, move 5s ease-in-out infinite;
+}
+
+/* Hiệu ứng mưa rơi */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px); /* Vị trí bắt đầu ngoài màn hình ở trên */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Rơi xuống đến cuối màn hình */
+        opacity: 0;
+    }
+}
+
+/* Hiệu ứng di chuyển qua trái phải */
+@keyframes move {
+    0% {
+        transform: translateX(0); /* Bắt đầu tại vị trí ban đầu */
+    }
+    50% {
+        transform: translateX(30px); /* Di chuyển sang phải */
+    }
+    100% {
+        transform: translateX(-30px); /* Di chuyển sang trái */
+    }
+}
